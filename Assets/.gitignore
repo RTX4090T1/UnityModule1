@@ -1,0 +1,56 @@
+Copilot said: Absolutely! Here is a clear, safe guide
+Absolutely! Here is a clear, safe guide to fix your Unity project’s Git problems and set up a clean Unity repo:
+
+Step 1: Add or Fix .gitignore
+Why:
+.gitignore tells git to ignore/untrack big/auto-generated Unity folders like Library/, Temp/, Build/, etc.
+You should NEVER add or commit the Library/ folder to Git!
+
+How:
+
+In the root of your Unity project (the folder with Assets/ and Library/), create a file named .gitignore if it doesn't exist.
+Paste this (the official Unity template):
+gitignore
+[Ll]ibrary/
+[Tt]emp/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+obj/
+.vs/
+ExportedObj/
+.consulo/
+*.svd
+*.user
+*.planner
+*.sublime-workspace
+
+# Uncomment this line if you wish to ignore the Asset Store tools plugin
+# [Aa]ssets/AssetStoreTools*
+
+# Mono Auto Generated Files
+*.pidb
+*.booproj
+*.sln
+*.userprefs
+
+# Unity3D generated meta files
+*.pidb.meta
+
+# Unity3D Generated File On Crash Reports
+sysinfo.txt
+
+# Builds
+*.apk
+*.unitypackage
+
+# Force all files in the 'StreamingAssets' directory to be treated as binary by Git.
+# Useful if you store binary files in that directory, such as images, videos, etc.
+# You can remove this if you want git to handle text files normally
+StreamingAssets/**
+
+# Ignore JetBrains Rider files
+.idea/
+*.sln.iml
